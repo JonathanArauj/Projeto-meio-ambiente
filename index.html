@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto Meio Ambiente e Saúde</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e0f0ff;
+      color: #003049;
+    }
+    header {
+      background-color: #1e5fa2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #3a7bd5;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+    .flip-container {
+      perspective: 1000px;
+      display: inline-block;
+      margin: 10px;
+    }
+    .flip-card {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-container:hover .flip-card {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    .flip-front {
+      background-color: #d0ebff;
+      color: #003049;
+    }
+    .flip-back {
+      background-color: #a5d8ff;
+      color: #001d3d;
+      transform: rotateY(180deg);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 500px;
+      margin: auto;
+    }
+    .question-box {
+      background-color: #d0ebff;
+      border: 2px solid #003049;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: left;
+      display: inline-block;
+    }
+    .question-box i {
+      margin-right: 10px;
+      color: #003049;
+    }
+    form input, form textarea {
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #1e5fa2;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      margin: 10px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .question-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px;
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+
+
+.question-box {
+  background-color: #d0ebff;
+  border: 2px solid #003049;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+    /* RESPONSIVIDADE */
+    (max-width: 768px) {
+      .question-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .question-box {
+        width: 90%;
+        max-width: 100%;
+      }
+
+      .flip-container {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .gallery img {
+        width: 90%;
+        height: auto;
+      }
+
+      header, nav, section, footer {
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      form {
+        width: 100%;
+        padding: 0 10px;
+      }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projeto Meio Ambiente e Saúde</h1>
+    <p>Conscientização para um futuro melhor</p>
+  </header>
+
+  <nav>
+    <a href="#dicas">Dicas</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <!-- DICAS -->
+  <section id="dicas">
+    <h2>Dicas Legais</h2>
+    <div class="flip-container"><div class="flip-card">
+      <div class="flip-front"><h3>Reduza o plástico</h3><p>Use sacolas reutilizáveis e evite descartáveis.</p></div>
+      <div class="flip-back"><p>Ajuda a preservar oceanos e animais marinhos.</p></div>
+    </div></div>
+    <div class="flip-container"><div class="flip-card">
+      <div class="flip-front"><h3>Movimente-se</h3><p>Exercícios diários ajudam seu corpo e sua mente.</p></div>
+      <div class="flip-back"><p>Reduz o estresse e melhora sua saúde mental.</p></div>
+    </div></div>
+    <div class="flip-container"><div class="flip-card">
+      <div class="flip-front"><h3>Descarte consciente</h3><p>Separe recicláveis, orgânicos e eletrônicos corretamente.</p></div>
+      <div class="flip-back"><p>Evita a contaminação do solo e da água.</p></div>
+    </div></div>
+    <div class="flip-container"><div class="flip-card">
+      <div class="flip-front"><h3>Economize água</h3><p>Feche a torneira ao escovar os dentes.</p></div>
+      <div class="flip-back"><p>Ajuda a combater a escassez hídrica no planeta.</p></div>
+    </div></div>
+    <div class="flip-container"><div class="flip-card">
+      <div class="flip-front"><h3>Consuma local</h3><p>Compre de produtores locais e reduza emissões.</p></div>
+      <div class="flip-back"><p>Fortalece a economia da sua comunidade.</p></div>
+    </div></div>
+    <div class="flip-container"><div class="flip-card">
+      <div class="flip-front"><h3>Plante árvores</h3><p>Elas purificam o ar e contribuem para o equilíbrio ambiental.</p></div>
+      <div class="flip-back"><p>Melhora a qualidade do ar e abriga a fauna.</p></div>
+    </div></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" style="text-align: center; padding-left: 20px;">
+    <h2>Quiz Educativo</h2>
+    <p>Responda e veja seu nível de consciência ambiental!</p>
+    <form onsubmit="return verificarRespostas(event)">
+      <div class="question-container">
+        <div class="question-box">
+          <i class="fas fa-leaf"></i>
+          <p><strong>1. Qual dessas atitudes ajuda o meio ambiente?</strong></p>
+          <label><input type="radio" name="q1" value="a"> Jogar lixo no chão</label><br>
+          <label><input type="radio" name="q1" value="b"> Plantar árvores</label><br>
+          <label><input type="radio" name="q1" value="c"> Desperdiçar água</label><br>
+        </div>
+
+        <div class="question-box">
+          <i class="fas fa-tint"></i>
+          <p><strong>2. Qual é uma boa prática para economizar água?</strong></p>
+          <label><input type="radio" name="q2" value="a"> Tomar banhos longos</label><br>
+          <label><input type="radio" name="q2" value="b"> Fechar a torneira ao escovar os dentes</label><br>
+          <label><input type="radio" name="q2" value="c"> Lavar o carro com mangueira aberta</label><br>
+        </div>
+
+        <div class="question-box">
+          <i class="fas fa-dumbbell"></i>
+          <p><strong>3. Qual dessas opções é mais saudável?</strong></p>
+          <label><input type="radio" name="q3" value="a"> Comer muitos alimentos industrializados</label><br>
+          <label><input type="radio" name="q3" value="b"> Praticar exercícios físicos e comer frutas</label><br>
+          <label><input type="radio" name="q3" value="c"> Ficar o dia todo em frente à TV</label><br>
+        </div>
+
+        <div class="question-box">
+          <i class="fas fa-recycle"></i>
+          <p><strong>4. O que é reciclagem?</strong></p>
+          <label><input type="radio" name="q4" value="a"> Jogar tudo no lixo comum</label><br>
+          <label><input type="radio" name="q4" value="b"> Reaproveitar materiais para novos usos</label><br>
+          <label><input type="radio" name="q4" value="c"> Queimar lixo em casa</label><br>
+        </div>
+      </div>
+
+      <button type="submit">Ver resultado</button>
+      <p id="resultado"></p>
+    </form>
+
+    <audio id="som-acerto" src="https://cdn.pixabay.com/audio/2022/03/15/audio_1ac7a8cf79.mp3"></audio>
+    <audio id="som-erro" src="https://cdn.pixabay.com/audio/2022/03/15/audio_b1e8c9dc90.mp3"></audio>
+
+    <script>
+      function verificarRespostas(event) {
+        event.preventDefault();
+        const respostasCorretas = {
+          q1: "b",
+          q2: "b",
+          q3: "b",
+          q4: "b"
+        };
+        let acertos = 0;
+        let somAcerto = document.getElementById("som-acerto");
+        let somErro = document.getElementById("som-erro");
+
+        for (let q in respostasCorretas) {
+          const resposta = document.querySelector(`input[name="${q}"]:checked`);
+          if (resposta) {
+            if (resposta.value === respostasCorretas[q]) {
+              acertos++;
+              somAcerto.play();
+            } else {
+              somErro.play();
+            }
+          }
+        }
+        const resultado = document.getElementById("resultado");
+        if (acertos === 4) {
+          resultado.innerText = "🎉 Parabéns! Você acertou todas as perguntas!";
+          resultado.style.color = "green";
+        } else {
+          resultado.innerText = `Você acertou ${acertos} de 4. Continue se informando!`;
+          resultado.style.color = "red";
+        }
+      }
+    </script>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+    <h2>Galeria de Imagens</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Natureza">
+      <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe" alt="Bem-estar">
+      <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" alt="Educação">
+      <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b" alt="Reciclagem">
+      <img src="https://img.freepik.com/fotos-premium/vista-de-alto-angulo-de-menino-afro-americano-plantando-flores-cor-de-rosa-frescas-na-terra-no-quintal-inalterado-estilo-de-vida-jardinagem-natureza-e-conceito-de-infancia_13339-313651.jpg?w=900" alt="Criança plantando árvore">
+      <img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b" alt="Água limpa">
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu email" required>
+      <textarea rows="4" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer style="text-align:center; padding:10px; background-color:#3a7bd5; color:white;">
+    Projeto de Extensão - Meio Ambiente e Saúde &copy; 2025
+  </footer>
+</body>
+</html>
